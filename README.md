@@ -29,6 +29,15 @@ rundeck:
   baseUrl: ${RUNDECK_BASE_URL}
   # Optional: authentication token
   authToken: ${RUNDECK_AUTH_TOKEN}
+backend:
+  endpoints:
+    '/proxy/rundeck':
+      target: ${RUNDECK_API_URL}
+      headers:
+        X-Rundeck-Auth-Token: ${RUNDECK_API_TOKEN}
+      changeOrigin: true
+      # If your Rundeck instance uses a self-signed certificate
+      secure: false
 ```
 
 ## Usage

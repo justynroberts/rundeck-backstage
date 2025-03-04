@@ -73,9 +73,10 @@ spec:
           key2: value2
 ```
 
-For a more detailed example, see `rundeck-sample-template.yaml`.
-`your-job-id` is the UUID for the job execution
-Options are passed across irrespective of being defined at the job end
+For a more detailed example, see `rundeck-sample-template.yaml`. 
+`your-job-id` is the UUID for the job execution. 
+
+Job options are passed across as the Key:Value pairs irrespective of being defined at the job end
 
 ## Local Development
 

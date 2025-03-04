@@ -28,6 +28,13 @@ Add your Rundeck configuration to your `app-config.yaml`:
 rundeck:
   url: ${RUNDECK_API_URL}
   apiToken: ${RUNDECK_API_TOKEN}
+
+```
+Then Set the environment variables as usual.
+
+To Avoid CORS issues, its also recommended to use the proxy setting sin the `app-config.yaml`:
+
+```yaml
 backend:
   endpoints:
     '/proxy/rundeck':
@@ -38,6 +45,8 @@ backend:
       # If your Rundeck instance uses a self-signed certificate
       secure: false
 ```
+
+
 
 ## Usage
 

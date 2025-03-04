@@ -26,9 +26,8 @@ Add your Rundeck configuration to your `app-config.yaml`:
 
 ```yaml
 rundeck:
-  baseUrl: ${RUNDECK_BASE_URL}
-  # Optional: authentication token
-  authToken: ${RUNDECK_AUTH_TOKEN}
+  url: ${RUNDECK_API_URL}
+  apiToken: ${RUNDECK_API_TOKEN}
 backend:
   endpoints:
     '/proxy/rundeck':

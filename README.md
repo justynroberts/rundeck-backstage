@@ -10,7 +10,7 @@ The Rundeck module for [@backstage/plugin-scaffolder-backend](https://www.npmjs.
 
 ```bash
 cd packages/backend
-yarn add https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git#main
+yarn add https://github.com/justynroberts/rundeck-backstage.git#main
 ```
 
 2. Configure the module in your `packages/backend/src/index.ts`:
@@ -70,6 +70,7 @@ spec:
           key1: value1
           key2: value2
 ```
+A more featured example is available as `rundeck-sample-template.yaml`
 
 ## Local Development
 

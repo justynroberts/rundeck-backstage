@@ -1,38 +1,42 @@
 # @internal/plugin-scaffolder-backend-module-rundeck
 
-The Rundeck module for [@backstage/plugin-scaffolder-backend](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend). This module adds a Rundeck action that can be used in your scaffolder templates.
+Integrate Rundeck seamlessly into your [Backstage Scaffolder](https://www.npmjs.com/package/@backstage/plugin-scaffolder-backend) with this module. It provides a `rundeck:execute` action to trigger Rundeck jobs directly from your scaffolder templates.
 
 ## Installation
 
-### From Git
+### Via Git
 
-1. Add the module to your backend package:
+1. **Add the module to your backend package:**
 
-```bash
-cd packages/backend
-yarn add https://github.com/justynroberts/rundeck-backstage.git#main
-```
+   ```bash
+   cd packages/backend
+   yarn add https://github.com/justynroberts/rundeck-backstage.git#main
+   ```
 
-2. Configure the module in your `packages/backend/src/index.ts`:
+2. **Register the module in `packages/backend/src/index.ts`:**
 
-```typescript
-// In packages/backend/src/index.ts
-backend.add(import('@internal/plugin-scaffolder-backend-module-rundeck'));
-```
+   ```typescript
+   // packages/backend/src/index.ts
+   backend.add(import('@internal/plugin-scaffolder-backend-module-rundeck'));
+   ```
 
-### Configuration
+## Configuration
 
-Add your Rundeck configuration to your `app-config.yaml`:
+### Rundeck Settings
+
+Configure your Rundeck connection in `app-config.yaml`:
 
 ```yaml
 rundeck:
   url: ${RUNDECK_API_URL}
   apiToken: ${RUNDECK_API_TOKEN}
-
 ```
-Then Set the environment variables as usual.
 
-To Avoid CORS issues, its also recommended to use the proxy setting sin the `app-config.yaml`:
+Set the corresponding environment variables as needed.
+
+### Proxy Setup
+
+To bypass CORS issues, add a proxy endpoint in `app-config.yaml`:
 
 ```yaml
 backend:
@@ -42,15 +46,13 @@ backend:
       headers:
         X-Rundeck-Auth-Token: ${RUNDECK_API_TOKEN}
       changeOrigin: true
-      # If your Rundeck instance uses a self-signed certificate
+      # For self-signed certificates, disable SSL verification
       secure: false
 ```
 
-
-
 ## Usage
 
-The module provides a `rundeck:execute` action that can be used in your scaffolder templates. Example:
+Use the `rundeck:execute` action in your scaffolder template. For example:
 
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
@@ -70,16 +72,19 @@ spec:
           key1: value1
           key2: value2
 ```
-A more featured example is available as `rundeck-sample-template.yaml`
+
+For a more detailed example, see `rundeck-sample-template.yaml`.
+`your-job-id` is the UUID for the job execution
+Options are passed across irrespective of being defined at the job end
 
 ## Local Development
 
-To develop the module locally:
+To develop or customize the module locally:
 
-1. Clone the repository
-2. Install dependencies with `yarn install`
-3. Build with `yarn build`
-4. Run tests with `yarn test`
+1. Clone the repository.
+2. Install dependencies with `yarn install`.
+3. Build the project using `yarn build`.
+4. Run tests with `yarn test`.
 
 ## License
 

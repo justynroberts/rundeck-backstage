@@ -1,0 +1,14 @@
+{
+  "name": "@internal/plugin-scaffolder-backend-module-rundeck",
+  "version": "0.1.0",
+  "private": true,
+  "main": "scaffolder-backend-module-rundeck/src/index.ts",
+  "types": "scaffolder-backend-module-rundeck/src/index.ts",
+  "dependencies": {
+    "@backstage/backend-plugin-api": "^0.6.0",
+    "@backstage/config": "^1.0.0",
+    "@backstage/plugin-scaffolder-node": "^0.1.0",
+    "node-fetch": "^2.6.7",
+    "zod": "^3.20.0"
+  }
+}

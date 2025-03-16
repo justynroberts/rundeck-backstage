@@ -10,7 +10,7 @@ Integrate Rundeck seamlessly into your [Backstage Scaffolder](https://www.npmjs.
 
    ```bash
    cd packages/backend
-   yarn add https://github.com/justynroberts/rundeck-backstage.git#main
+   yarn add plugin-scaffolder-backend-module-rundeck@https://github.com/justynroberts/rundeck-backstage.git#main
    ```
 
 2. **Register the module in `packages/backend/src/index.ts`:**
